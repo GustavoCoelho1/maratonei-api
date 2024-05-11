@@ -1,0 +1,15 @@
+## INSERT INTO
+###
+POST https://localhost:3000/users/
+Content-Type: application/json
+
+{
+    "user_id": "05ec95d9-cdb8-4775-8560-31a19d5938da",
+    "name": "user1",
+    "email": "user1@test.com",
+    "password": "ba91a2c7-6619-4df0-95b0-a25135d347a7"
+}
+
+## SELECT *
+###
+GET http://localhost:4000/produto/49929a5a-e908-489b-8638-edfcf268fffd
