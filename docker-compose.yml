@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_database
+    restart: always
+    ports:
+      - '5432:5432'
+    env_file:
+      - .env
+    volumes:
+      - my-databases:/postgres/maratonei-api
+
+  redis:
+    image: redis:latest
+    container_name: redis_server
+    restart: always
+    volumes:
+      - my-services:/redis/maratonei-api
+    ports:
+      - '6379:6379'
+
+  redis_insight:
+    image: redislabs/redisinsight:latest
+    container_name: redis_insight
+    restart: always
+    volumes:
+      - my-services:/redis-insight/maratonei-api
+    ports:
+      - '8001:8001'
+
+volumes:
+  my-databases:
+  my-services:
