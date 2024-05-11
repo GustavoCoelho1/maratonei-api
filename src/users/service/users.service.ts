@@ -7,17 +7,17 @@ import { SaveUserDTO } from '../dto/UserDTO';
 
 @Injectable()
 export class UserService {
-  constructor(
-    @InjectRepository(UserEntity)
-    private userRepository: Repository<UserEntity>,
-  ) {}
+    constructor(
+        @InjectRepository(UserEntity)
+        private userRepository: Repository<UserEntity>,
+    ) {}
 
-  getAll = async () => await this.userRepository.find();
+    getAll = async () => await this.userRepository.find();
 
-  getById = async (id: UUID) =>
-    await this.userRepository.findOne({ where: { user_id: id } });
+    getById = async (id: UUID) =>
+        await this.userRepository.findOne({ where: { user_id: id } });
 
-  save = async (data: SaveUserDTO) => {
-    console.log(data);
-  };
+    save = async (data: SaveUserDTO) => {
+        console.log(data);
+    };
 }
