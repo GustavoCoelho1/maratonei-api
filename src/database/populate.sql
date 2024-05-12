@@ -52,18 +52,9 @@ CREATE TABLE Favorites (
     FOREIGN KEY (movie_id) REFERENCES Movies(movie_id)
 );
 
--- Inserir dados na tabela Users
+-- Inserir dados na tabela Users (Senha "John Doe": password123)
 INSERT INTO Users (name, email, password) VALUES
-    ('John Doe', 'john@example.com', 'password123'),
-    ('Alice Smith', 'alice@example.com', 'securepass'),
-    ('Bob Johnson', 'bob@example.com', 'mypassword'),
-    ('Emily Brown', 'emily@example.com', 'p@ssw0rd'),
-    ('Michael Lee', 'michael@example.com', 'letmein'),
-    ('Sarah Wilson', 'sarah@example.com', 'password123'),
-    ('David Garcia', 'david@example.com', 'davids_password'),
-    ('Emma Martinez', 'emma@example.com', '123456'),
-    ('James Taylor', 'james@example.com', 'qwerty'),
-    ('Olivia Anderson', 'olivia@example.com', 'password123');
+    ('John Doe', 'john@example.com', '$2a$12$CGBU2dPnOqxdh6dGBdFYBO/GNyO1GKiajvrV3Zh1BW6i1Yoe6Zj4K');
 
 -- Inserir dados na tabela Genres
 INSERT INTO Genres (name) VALUES
@@ -108,25 +99,25 @@ INSERT INTO Production_Cast (name, role, movie_id) VALUES
 -- Inserir dados na tabela Ratings
 INSERT INTO Ratings (user_id, movie_id, rating) VALUES
     ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'Matrix'), 4.5),
-    ((SELECT user_id FROM Users WHERE name = 'Alice Smith'), (SELECT movie_id FROM Movies WHERE title = 'Pulp Fiction'), 4.8),
-    ((SELECT user_id FROM Users WHERE name = 'Bob Johnson'), (SELECT movie_id FROM Movies WHERE title = 'Um Sonho de Liberdade'), 4.7),
-    ((SELECT user_id FROM Users WHERE name = 'Emily Brown'), (SELECT movie_id FROM Movies WHERE title = 'Batman: O Cavaleiro das Trevas'), 4.9),
-    ((SELECT user_id FROM Users WHERE name = 'Michael Lee'), (SELECT movie_id FROM Movies WHERE title = 'Forrest Gump'), 4.6),
-    ((SELECT user_id FROM Users WHERE name = 'Sarah Wilson'), (SELECT movie_id FROM Movies WHERE title = 'A Origem'), 4.8),
-    ((SELECT user_id FROM Users WHERE name = 'David Garcia'), (SELECT movie_id FROM Movies WHERE title = 'Clube da Luta'), 4.9),
-    ((SELECT user_id FROM Users WHERE name = 'Emma Martinez'), (SELECT movie_id FROM Movies WHERE title = 'O Senhor dos Anéis: O Retorno do Rei'), 4.7),
-    ((SELECT user_id FROM Users WHERE name = 'James Taylor'), (SELECT movie_id FROM Movies WHERE title = 'O Poderoso Chefão'), 4.5),
-    ((SELECT user_id FROM Users WHERE name = 'Olivia Anderson'), (SELECT movie_id FROM Movies WHERE title = 'O Rei Leão'), 4.2);
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'Pulp Fiction'), 4.8),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'Um Sonho de Liberdade'), 4.7),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'Batman: O Cavaleiro das Trevas'), 4.9),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'Forrest Gump'), 4.6),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'A Origem'), 4.8),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'Clube da Luta'), 4.9),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'O Senhor dos Anéis: O Retorno do Rei'), 4.7),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'O Poderoso Chefão'), 4.5),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'O Rei Leão'), 4.2);
 
 -- Inserir dados na tabela Favorites
 INSERT INTO Favorites (user_id, movie_id) VALUES
     ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'Matrix')),
-    ((SELECT user_id FROM Users WHERE name = 'Alice Smith'), (SELECT movie_id FROM Movies WHERE title = 'Pulp Fiction')),
-    ((SELECT user_id FROM Users WHERE name = 'Bob Johnson'), (SELECT movie_id FROM Movies WHERE title = 'Um Sonho de Liberdade')),
-    ((SELECT user_id FROM Users WHERE name = 'Emily Brown'), (SELECT movie_id FROM Movies WHERE title = 'Batman: O Cavaleiro das Trevas')),
-    ((SELECT user_id FROM Users WHERE name = 'Michael Lee'), (SELECT movie_id FROM Movies WHERE title = 'Forrest Gump')),
-    ((SELECT user_id FROM Users WHERE name = 'Sarah Wilson'), (SELECT movie_id FROM Movies WHERE title = 'A Origem')),
-    ((SELECT user_id FROM Users WHERE name = 'David Garcia'), (SELECT movie_id FROM Movies WHERE title = 'Clube da Luta')),
-    ((SELECT user_id FROM Users WHERE name = 'Emma Martinez'), (SELECT movie_id FROM Movies WHERE title = 'O Senhor dos Anéis: O Retorno do Rei')),
-    ((SELECT user_id FROM Users WHERE name = 'James Taylor'), (SELECT movie_id FROM Movies WHERE title = 'O Poderoso Chefão')),
-    ((SELECT user_id FROM Users WHERE name = 'Olivia Anderson'), (SELECT movie_id FROM Movies WHERE title = 'O Rei Leão'));
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'Pulp Fiction')),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'Um Sonho de Liberdade')),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'Batman: O Cavaleiro das Trevas')),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'Forrest Gump')),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'A Origem')),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'Clube da Luta')),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'O Senhor dos Anéis: O Retorno do Rei')),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'O Poderoso Chefão')),
+    ((SELECT user_id FROM Users WHERE name = 'John Doe'), (SELECT movie_id FROM Movies WHERE title = 'O Rei Leão'));
