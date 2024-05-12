@@ -1,5 +1,5 @@
-import { SaveUserDTO } from 'src/users/dto/UserDTO';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { FavoriteEntity } from './favorite.entity';
 
 @Entity({ name: 'users' })
 export class UserEntity {
@@ -14,4 +14,7 @@ export class UserEntity {
 
     @Column({ type: 'varchar' })
     password: string;
+
+    @OneToMany(() => FavoriteEntity, (favorite) => favorite.user)
+    favorites: FavoriteEntity[];
 }
